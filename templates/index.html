@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block text %}
+
+<div  class="container">
+<form action="/analyze"  method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Enter yout text here....</label>
+        <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
+    </div>
+
+<div class="custom-control custom-switch">
+  <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1">remove punctuation</label>
+</div>
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2">Upper case</label>
+</div>
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="newlineremove" class="custom-control-input" id="customSwitch3">
+  <label class="custom-control-label" for="customSwitch3">New Line Remover</label>
+</div>
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="spaceremove" class="custom-control-input" id="customSwitch4">
+  <label class="custom-control-label" for="customSwitch4">Extra Space Remover</label>
+</div>
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="charcount" class="custom-control-input" id="customSwitch5">
+  <label class="custom-control-label" for="customSwitch5">Char Count</label>
+</div><br>
+<button type="submit" class="btn btn-dark">Analyze Text</button>
+    </form>
+</div>
+
+{% endblock %}
+
+
+

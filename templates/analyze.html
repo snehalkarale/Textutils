@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+{% block text %}
+<div  class="container">
+ <h3>Analyzing text here...{{purpose}}</h3>
+<p>
+   <pre> {{ analyzed_text }}</pre>
+    {% if char_count %}
+    <h3>Character count is {{ char_count }}</h3>
+    {% endif %}
+</p>
+</div>
+
+{% endblock %}
